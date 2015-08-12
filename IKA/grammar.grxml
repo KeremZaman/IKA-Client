@@ -1,0 +1,135 @@
+﻿<grammar version="1.0" xml:lang="en-US" root="commands"
+  xmlns="http://www.w3.org/2001/06/grammar">
+
+<rule id="commands">
+    <one-of>
+      <item>
+        <item> Go </item>
+        <ruleref uri="#numbers" />
+          <one-of>
+            <item>
+              <one-of>
+                <item> meter </item>
+                <item> meters </item>
+              </one-of>
+            </item>
+            <item>
+              <one-of>
+                <item> seconds </item>
+                <item> second </item>
+              </one-of>
+            </item>
+          </one-of>
+        </item>
+      <item>
+        <item> Rotate </item>
+        <ruleref uri="#numbers" />
+        <one-of>
+          <item> Degree </item>
+          <item> Degrees </item>
+        </one-of>
+        <one-of>
+          <item> to left </item>
+          <item> to right </item>
+        </one-of>
+      </item>
+      <item> Brake </item>
+      <item>
+        <item> Turn on </item>
+        <ruleref uri="#headlights" />
+      </item>
+      <item>
+        <item> Turn off </item>
+        <ruleref uri="#headlights" />
+      </item>
+      <item>
+        <item> Blink On </item>
+        <ruleref uri="#headlights" />
+      </item>
+      <item>
+        <item> Blink Off </item>
+        <ruleref uri="#headlights" />
+      </item>
+      <item> Hoot </item>
+      <item>
+        <item>Sound the horn for</item>
+        <ruleref uri="#numbers"/>
+        <one-of>
+          <item>seconds</item>
+          <item>seconds</item>
+        </one-of>
+        </item>
+      <item> Silence the horn </item>
+    </one-of>
+  </rule>
+
+  <rule id="numbers">
+    <item repeat="0-1">
+      <ruleref uri="#digits"/>
+      <item>thousand</item>
+    </item>
+    <item repeat="0-1">
+      <ruleref uri="#digits"/>
+      <item>hundred</item>
+    </item>
+    <item repeat="0-1">
+      <one-of>
+        <item>
+          <one-of>
+            <item> twenty </item>
+            <item> thirty </item>
+            <item> forty </item>
+            <item> fifty </item>
+            <item> sixty </item>
+            <item> seventy </item>
+            <item> eighty </item>
+            <item> ninety </item>
+          </one-of>
+          <item repeat="0-1">
+            <ruleref uri="#digits"/>
+          </item>
+      </item>
+        <item repeat="0-1">
+          <one-of>
+            <item>
+              <ruleref uri="#digits" />
+            </item>
+            <item> eleven </item>
+            <item> twelve </item>
+            <item> thirteen </item>
+            <item> fourteen </item>
+            <item> fifteen </item>
+            <item> sixteen </item>
+            <item> seventeen </item>
+            <item> eighteen </item>
+            <item> nineteen </item>
+          </one-of>
+        </item>
+      </one-of>
+    </item>
+
+  </rule>
+
+  <rule id="headlights">
+    <one-of>
+    <item> top headlight </item>
+    <item> left headlight </item>
+    <item> right headlight </item>
+    <item> angel eyes </item>
+    </one-of>
+  </rule>
+
+  <rule id="digits">
+    <one-of>
+      <item> one </item>
+      <item> two </item>
+      <item> three </item>
+      <item> four </item>
+      <item> five </item>
+      <item> six </item>
+      <item> seven </item>
+      <item> eight </item>
+      <item> nine </item>
+    </one-of>
+  </rule>
+</grammar>

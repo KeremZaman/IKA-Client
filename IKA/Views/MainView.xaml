@@ -1,0 +1,33 @@
+﻿<mui:ModernWindow x:Class="IKA.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        xmlns:model="clr-namespace:IKA.ViewModels"
+        xmlns:views="clr-namespace:IKA.Views"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:cal="http://www.caliburnproject.org"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ika="clr-namespace:IKA"
+        mc:Ignorable="d"
+        d:DataContext="{x:Type model:MainViewModel}"
+        Title="{Binding WindowTitle}"
+        Height="400" Width="700"
+       cal:Message.Attach="[Event PreviewKeyDown] = [Action onMainKeyDown($eventArgs)];[Event PreviewKeyUp] = [Action onMainKeyUp($eventArgs)]"
+        >
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="Kontrol" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="Headlight Control" Source="..\Views\HeadlightView.xaml"/>
+                <mui:Link DisplayName="Connect" Source="..\Views\ConnectionView.xaml"/>
+                <mui:Link DisplayName="Camera" Source="..\Views\CameraView.xaml"></mui:Link>
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+        <mui:LinkGroup DisplayName="İKA" >
+            <mui:LinkGroup.Links>
+                <mui:Link DisplayName="About" />
+                <mui:Link DisplayName="System" />
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>
