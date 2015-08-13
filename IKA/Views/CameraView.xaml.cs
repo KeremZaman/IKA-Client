@@ -42,8 +42,11 @@ namespace IKA.Views
             myControl.Visibility = Visibility.Visible;
             StopButton.Visibility = Visibility.Hidden;
             PlayButton.Visibility = Visibility.Visible;
-            string source = "http://" + ConnectionTemp.IPAdress + ":8080";
-            myControl.Source = new Uri(source);
+            ConnectionTemp.PropertyChanged += (s, e) =>
+            {
+                string source = "http://" + ConnectionTemp.IPAdress + ":8080";
+                myControl.Source = new Uri(source);
+            };
             this.Loaded += (s,e) => { canvas.Focus(); };
         }
 

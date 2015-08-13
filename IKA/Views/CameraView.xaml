@@ -11,7 +11,7 @@
         xmlns:ika="clr-namespace:IKA"
         d:DataContext="{x:Type model:CameraViewModel}"
         d:DesignHeight="300" d:DesignWidth="300"
-        cal:Message.Attach="[Event Loaded] = [Action CameraView_OnLoaded($Source)];[Event PreviewKeyDown] = [Action onKeyDown($eventArgs)];[Event PreviewKeyUp] = [Action onKeyUp($eventArgs)]">
+        cal:Message.Attach="[Event PreviewKeyDown] = [Action onKeyDown($eventArgs)];[Event PreviewKeyUp] = [Action onKeyUp($eventArgs)]">
     <Grid x:Name="grid">
         <Grid.Resources>
             <ResourceDictionary>

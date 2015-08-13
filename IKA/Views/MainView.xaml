@@ -20,7 +20,7 @@
             <mui:LinkGroup.Links>
                 <mui:Link DisplayName="Headlight Control" Source="..\Views\HeadlightView.xaml"/>
                 <mui:Link DisplayName="Connect" Source="..\Views\ConnectionView.xaml"/>
-                <mui:Link DisplayName="Camera" Source="..\Views\CameraView.xaml"></mui:Link>
+                <mui:Link DisplayName="Camera" Source="..\Views\CameraView.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="İKA" >
